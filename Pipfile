@@ -1,0 +1,11 @@
+[requires]
+python_version = '3.6'
+
+[packages]
+sanic = "*"
+
+[dev-packages]
+black = "==18.6b2"
+pytest = "*"
+pytest-cov = "*"
+sphinx = "*"
