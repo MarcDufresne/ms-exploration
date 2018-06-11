@@ -8,15 +8,15 @@ jobs:
       - checkout
 
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             make bootstrap
             make install
 
       - run:
-          name: lint
+          name: Lint
           command: make lint
 
       - run:
-          name: unit tests
+          name: Unit Tests
           command: make test
