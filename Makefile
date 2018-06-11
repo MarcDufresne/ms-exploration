@@ -39,7 +39,8 @@ clean-build:
 	rm --force --recursive *.egg-info
 
 bootstrap:
-	pip install -U pipenv
+	pip install -U pipenv pre-commit
+	pre-commit install
 
 install:
 	pipenv install --dev
