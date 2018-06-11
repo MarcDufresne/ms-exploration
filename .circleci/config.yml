@@ -1,11 +1,22 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/python:3.6.5-jessie-browsers
-     steps:
-       - checkout
-       - run: make bootstrap
-       - run: make install
-       - run: make lint
-       - run: make test
+  build:
+    docker:
+      - image: circleci/python:3.6.5-jessie
+
+    steps:
+      - checkout
+
+      - run:
+          name: install dependencies
+          command: |
+            make bootstrap
+            make install
+
+      - run:
+          name: lint
+          command: make lint
+
+      - run:
+          name: unit tests
+          command: make test
