@@ -10,5 +10,5 @@ repos:
         name: Regenerate Pipfile.lock
         entry: pipenv lock
         language: system
-        files: ^Pipfile$
+        files: Pipfile
         pass_filenames: False

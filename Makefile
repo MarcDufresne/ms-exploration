@@ -43,6 +43,10 @@ clean-build:
 bootstrap:
 	pip install --user -U pipenv pre-commit
 	pre-commit install
+	curl -o \
+		/usr/local/bin/circleci \
+		https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci &&\
+		chmod +x /usr/local/bin/circleci
 
 install:
 	pipenv install --dev
@@ -80,3 +84,6 @@ docker-run:
 docker-clean:
 	docker kill ms-exp
 	docker rm ms-exp
+
+circleci-validate:
+	circleci config validate
