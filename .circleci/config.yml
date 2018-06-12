@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.6.5-jessie
 
     environment:
-       BASH_ENV: ~/.bashrc
+       BASH_ENV: /home/circleci/.bashrc
 
     steps:
       - checkout
