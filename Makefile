@@ -10,6 +10,8 @@ default:
 	@echo " 	Creates a virtualenv and install project dependencies."
 	@echo " install-deploy"
 	@echo " 	Same as 'install' but making sure the Pipfile.lock is up-to-date."
+	@echo " install-deploy-dev"
+	@echo " 	Same as 'install-deploy' including dev dependecies."
 	@echo " clean-env"
 	@echo " 	Delete virtualenv directory."
 	@echo " format"
@@ -55,13 +57,13 @@ clean-env:
 	rm -rf .venv
 
 format:
-	pipenv run black -l 80 --py36 ms tests
+	pipenv run black ms tests
 
 lint:
-	pipenv run black -l 80 --py36 --check ms tests
+	pipenv run black --check ms tests
 
 test:
-	pipenv run pytest --cov tests
+	pipenv run pytest --cov ms --junitxml output.xml tests
 
 gen-doc:
 	@echo "Not implemented"
