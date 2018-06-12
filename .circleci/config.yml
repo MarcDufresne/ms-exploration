@@ -11,7 +11,7 @@ jobs:
           name: Install Dependencies
           command: |
             make bootstrap
-            make install
+            make install-deploy-dev
 
       - run:
           name: Lint
