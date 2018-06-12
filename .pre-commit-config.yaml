@@ -11,3 +11,4 @@ repos:
         entry: pipenv lock
         language: system
         files: ^Pipfile$
+        pass_filenames: False
