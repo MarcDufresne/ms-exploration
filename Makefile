@@ -67,7 +67,7 @@ lint:
 	pipenv run black --check ms tests
 
 test:
-	pipenv run pytest --cov ms --junitxml output.xml tests
+	pipenv run pytest --cov ms --junitxml test-results/junit/results.xml tests
 
 gen-doc:
 	@echo "Not implemented"

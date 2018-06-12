@@ -92,4 +92,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .pytest_cache
-output.xml
+test-results
