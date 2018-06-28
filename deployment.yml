@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-deployment
+  labels:
+    app: ms
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ms
+  template:
+    metadata:
+      labels:
+        app: ms
+    spec:
+      containers:
+      - name: ms
+        image: marcdufresne/ms-exploration
+        ports:
+        - containerPort: 8000

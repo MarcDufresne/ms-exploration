@@ -56,6 +56,11 @@ run-local: ## Start app locally
 docker-build: ## Build docker container
 	docker build -t ms-exp .
 
+docker-push: ## Login, tag and push latest image
+	docker login -u ${DOCKER_AUTH_USERNAME} -p ${DOCKER_AUTH_PASSWORD}
+	docker tag ms-exp:latest marcdufresne/ms-exploration:latest
+	docker push marcdufresne/ms-exploration:latest
+
 docker-run: ## Run docker container
 	docker run -d -p 8000:8000 --name ms-exp ms-exp
 
