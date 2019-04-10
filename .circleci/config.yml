@@ -30,3 +30,26 @@ jobs:
 
       - store_test_results:
           path: test-results
+
+  fake_deploy:
+    docker:
+      image: circleci/python:3.6
+
+    steps:
+      - checkout
+      - run:
+          name: Test
+          command: |
+            export
+
+workflows:
+  version: 2
+  normal_workflow:
+    jobs:
+      - build
+  deploy_workflow:
+    jobs:
+      - fake_deploy:
+          filters:
+            tags:
+              only: /^v.*/
