@@ -33,7 +33,7 @@ jobs:
 
   fake_deploy:
     docker:
-      image: circleci/python:3.6
+      - image: circleci/python:3.6
 
     steps:
       - checkout
