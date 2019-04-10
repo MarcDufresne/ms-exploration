@@ -8,10 +8,7 @@ app = Sanic()
 
 @app.route("/")
 async def test(request):
-    return json({
-        "time": time(),
-        "version": '3.0'
-    })
+    return json({"time": time(), "version": "3.0"})
 
 
 if __name__ == "__main__":
