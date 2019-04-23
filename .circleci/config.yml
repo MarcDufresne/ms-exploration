@@ -69,3 +69,8 @@ workflows:
       - fake_deploy_2:
           requires:
             - fake_deploy
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
